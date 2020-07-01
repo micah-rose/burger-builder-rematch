@@ -5,11 +5,12 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  margin: 25px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 15s linear;
   }
 }
 
@@ -24,8 +25,15 @@
   color: white;
 }
 
+p {
+  margin: 25px;
+  font-size: 40px;
+  font-weight: bold;
+  color: lightgray;
+}
+
 .App-link {
-  color: #61dafb;
+  color: whitesmoke;
 }
 
 @keyframes App-logo-spin {
