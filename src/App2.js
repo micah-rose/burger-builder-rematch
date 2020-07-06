@@ -2,7 +2,7 @@
 
 import React from 'react';
 import logo from './burger-lrg.png';
-import './App.css';
+import './Landing.css';
 import { useHistory } from 'react-router-dom';
 
 
