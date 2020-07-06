@@ -12,7 +12,9 @@ function App() {
         WELCOME TO BURGER BUILDER
       </p>
         <img src={logo} className="App-logo" alt="logo" /><br/>
-        <Person />
+        <Person name="Max" age="28"/>
+        <Person name="Manu" age="29">My Hobbies: Racing</Person>
+        <Person name="Steph" age="26"/>
       </header>
     </div>
   );
