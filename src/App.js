@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './burger-lrg.png';
 import './App.css';
 import Person from './Person/Person';
 
-function App() {
+class App extends Component {
 state = {
   persons: []
 }
 
+render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -22,6 +23,7 @@ state = {
       </header>
     </div>
   );
+}
 }
 
 export default App;
