@@ -16,10 +16,6 @@ render(){
   return (
     <div className="App">
       <header className="App-header">
-      <p>
-        WELCOME TO BURGER BUILDER
-      </p>
-        <img src={logo} className="App-logo" alt="logo" /><br/>
         <button>Switch Name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>My Hobbies: Racing</Person>
