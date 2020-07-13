@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-const app = props => {
+const App = props => {
 
 //render(){
 
@@ -64,4 +64,4 @@ const switchNameHandler = () => {
 //   })
 // }
 
-export default app;
+export default App;
