@@ -29,9 +29,15 @@ switchNameHandler = () => {
     <div className="App">
       <header className="App-header">
         <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>My Hobbies: Racing</Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+        <Person 
+        name={this.state.persons[0].name} 
+        age={this.state.persons[0].age}/>
+        <Person 
+        name={this.state.persons[1].name} 
+        age={this.state.persons[1].age}>My Hobbies: Racing</Person>
+        <Person 
+        name={this.state.persons[2].name} 
+        age={this.state.persons[2].age}/>
       </header>
     </div>
   );
