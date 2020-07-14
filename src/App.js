@@ -36,9 +36,20 @@ nameChangedHandler = (event) => {
 }
 
  render(){
+
+  const style = {
+    backgroundColor: "white",
+    font: "inherit",
+    border: "1px solid blue",
+    padding: "8px",
+    cursor: "pointer"
+  }
+
   return (
     <div className="App">    
-        <button onClick={() => this.switchNameHandler('Maximilian!!')}>Switch Name</button>
+        <button 
+        onClick={() => this.switchNameHandler('Maximilian!!')}
+        style={style}>Switch Name</button>
         <Person 
         name={this.state.persons[0].name} 
         age={this.state.persons[0].age}/>
