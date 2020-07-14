@@ -37,8 +37,7 @@ nameChangedHandler = (event) => {
 
  render(){
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App">    
         <button onClick={() => this.switchNameHandler('Maximilian!!')}>Switch Name</button>
         <Person 
         name={this.state.persons[0].name} 
@@ -51,7 +50,6 @@ nameChangedHandler = (event) => {
         <Person 
         name={this.state.persons[2].name} 
         age={this.state.persons[2].age}/>
-      </header>
     </div>
   );
 }
