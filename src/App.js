@@ -17,6 +17,8 @@ const [ personsState, setPersonsState ] = useState({
 
 });
 
+console.log(personsState);
+
 const switchNameHandler = () => {
     //console.log('Was clicked');
     //DON'T DO THIS -> this.state.persons[0].name = "Maximilian";
