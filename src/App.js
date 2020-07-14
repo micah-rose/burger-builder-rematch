@@ -17,7 +17,9 @@ const [ personsState, setPersonsState ] = useState({
 
 });
 
-console.log(personsState);
+//Example that you can call useState multiple times (for functional components only)
+const [otherState] = useState({otherState: "some other value"});
+console.log(personsState, otherState);
 
 const switchNameHandler = () => {
     //console.log('Was clicked');
