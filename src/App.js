@@ -40,6 +40,12 @@ togglePersonsHandler = () => {
 this.setState({showPersons: true})
 }
 
+deletePersonHandler = (personIndex) => {
+  const persons = this.state.persons;
+  persons.splice(personIndex, 1);
+  this.setState({persons: persons});
+}
+
  render(){
 
   const style = {
@@ -54,8 +60,9 @@ this.setState({showPersons: true})
   if (this.state.showPersons) {
     personCards = (
       <div>
-        {this.state.persons.map(person => {
+        {this.state.persons.map((person, index) => {
           return <Person 
+          click={() => this.deletePersonHandler(index)}
           name={person.name} 
           age={person.age}/>
         })}
