@@ -41,7 +41,8 @@ this.setState({showPersons: true})
 }
 
 deletePersonHandler = (personIndex) => {
-  const persons = this.state.persons;
+  //const persons = this.state.persons.slice();
+  const persons = [...this.state.persons]; //using spread operator vs slice
   persons.splice(personIndex, 1);
   this.setState({persons: persons});
 }
