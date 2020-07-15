@@ -59,7 +59,8 @@ deletePersonHandler = (personIndex) => {
  render(){
 
   const style = {
-    backgroundColor: "white",
+    backgroundColor: "green",
+    color: "white",
     font: "inherit",
     border: "1px solid blue",
     padding: "8px",
@@ -80,6 +81,8 @@ deletePersonHandler = (personIndex) => {
         })}
       </div>
     );
+
+    style.backgroundColor = "red";
   }
 
   return (
