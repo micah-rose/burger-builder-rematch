@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
 
@@ -103,7 +102,6 @@ deletePersonHandler = (personIndex) => {
   }
 
   return (
-    <StyleRoot>
     <div className="App">  
     <p className={classes.join(' ')}>This is really working!</p>  
         <button 
@@ -111,9 +109,8 @@ deletePersonHandler = (personIndex) => {
         style={style}>Toggle Persons</button>
         {personCards}
     </div>
-    </StyleRoot>
   );
 }
 }
 
-export default Radium(App);
+export default App;
