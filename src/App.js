@@ -85,8 +85,17 @@ deletePersonHandler = (personIndex) => {
     style.backgroundColor = "red";
   }
 
+  let classes = [];
+  if (this.state.persons.length <= 2){
+    classes.push('red');
+  }
+  if(this.state.persons.length <= 1){
+    classes.push('bold');
+  }
+
   return (
-    <div className="App">    
+    <div className="App">  
+    <p className={classes.join(' ')}>This is really working!</p>  
         <button 
         onClick={this.togglePersonsHandler}
         style={style}>Toggle Persons</button>
