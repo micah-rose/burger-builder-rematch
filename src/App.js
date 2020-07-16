@@ -64,11 +64,12 @@ deletePersonHandler = (personIndex) => {
     personCards = (
       <div>
         {this.state.persons.map((person, index) => {
-          return <ErrorBoundary key={person.id}><Person 
+          return <Person 
           click={() => this.deletePersonHandler(index)}
           name={person.name} 
           age={person.age}
-          changed={(event) => this.nameChangedHandler(event, person.id)}/></ErrorBoundary>
+          key={person.id}
+          changed={(event) => this.nameChangedHandler(event, person.id)}/>
         })}
       </div>
     );
