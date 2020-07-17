@@ -32,6 +32,15 @@ componentDidMount(){
   console.log("AppJS component did mount");
 }
 
+shouldComponentUpdate(){
+  console.log("AppJS should component update");
+  return true;
+}
+
+componentDidUpdate(){
+  console.log("AppJS component did update");
+}
+
 switchNameHandler = (newName) => {
   //console.log('Was clicked');
   //DON'T DO THIS -> this.state.persons[0].name = "Maximilian";
