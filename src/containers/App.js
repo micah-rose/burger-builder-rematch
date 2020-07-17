@@ -4,6 +4,10 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+constructor(props){
+  super(props);
+  console.log("AppJS constructor");
+}
 
 state = {
   persons: [
@@ -13,6 +17,19 @@ state = {
   ],
   otherState: "some other value",
   showPersons: false
+}
+
+static getDerivedStateFromProps(props, state){
+  console.log("AppJS from props");
+  return state;
+}
+
+// componentWillMount(){
+//   console.log("AppJS component will mount");
+// }
+
+componentDidMount(){
+  console.log("AppJS component did mount");
 }
 
 switchNameHandler = (newName) => {
@@ -58,6 +75,8 @@ deletePersonHandler = (personIndex) => {
 }
 
  render(){
+  console.log("AppJS render")
+
   let personCards = null;
 
   if (this.state.showPersons) {
