@@ -12,12 +12,14 @@ class Persons extends Component {
         return true;
     }
 
-    // getSnapshotBeforeUpdate(prevProps, prevState){
-    //     console.log("PersonsJS get snapshop before update");
-    // }
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        console.log("PersonsJS get snapshop before update");
+        return {message: "Snapshot!"};
+    }
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps, prevState, snapshot){
         console.log("PersonsJS component did update");
+        console.log(snapshot);
     }
 
 
