@@ -2,7 +2,7 @@
 
 import React from 'react';
 import logo from '../assets/burger-lrg.png';
-import './App.css';
+import classes from './App.css';
 //import { useHistory } from 'react-router-dom';
 
 
@@ -15,13 +15,13 @@ function App() {
   // }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={classes.App}>
+      <header className={classes.Header}>
       <p>
         WELCOME TO BURGER BUILDER
       </p>
-        <img src={logo} className="App-logo" alt="logo" /><br/> 
-        <a href="www.Google.com">Click Here to Build Your Burger</a> 
+        <img src={logo} className={classes.Logo} alt="logo" /><br/> 
+        <a className={classes.Link} href="www.Google.com">Click Here to Build Your Burger</a> 
       </header>
     </div>
      //<a onClick={handleClick}>Click Here to Build Your Burger</a>
