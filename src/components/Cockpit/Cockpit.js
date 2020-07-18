@@ -4,10 +4,11 @@ import classes from './Cockpit.css'
 const Cockpit = (props) => {
     useEffect(() => {
         console.log("CockpitJS use effect");
-        setTimeout(() => {
-            console.log("SAVED DATA TO CLOUD");
+        const timer = setTimeout(() => {
+            alert("SAVED DATA TO CLOUD");
         }, 1000);
         return () => {
+            clearTimeout(timer);
             console.log("CockpitJS clean up work in useEffect");
         }
     }, [])
@@ -18,7 +19,7 @@ const Cockpit = (props) => {
         console.log("CockpitJS clean up work in 2nd useEffect");
     }
  })
- 
+
     const assignedClasses = [];
     let btnClass = '';
     if (props.showPersons){
