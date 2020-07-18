@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass';
 
 class App extends Component {
 constructor(props){
@@ -98,7 +99,7 @@ deletePersonHandler = (personIndex) => {
   }
 
   return (
-    <div className={classes.App}>  
+    <WithClass classes={classes.App}>  
     <button 
     onClick={() => {this.setState({showCockpit: false})}}>
       Remove Cockpit</button>
@@ -109,7 +110,7 @@ deletePersonHandler = (personIndex) => {
         persons={this.state.persons}/>
       ) : null}
         {personCards}
-    </div>
+    </WithClass>
   );
 }
 }
