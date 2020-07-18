@@ -4,15 +4,15 @@ import classes from './Cockpit.css'
 const Cockpit = (props) => {
 
     const toggleBtnRef = useRef(null);
-    toggleBtnRef.current.click();
 
     useEffect(() => {
         console.log("CockpitJS use effect");
-        const timer = setTimeout(() => {
-            alert("SAVED DATA TO CLOUD");
-        }, 1000);
+        // const timer = setTimeout(() => {
+        //     alert("SAVED DATA TO CLOUD");
+        // }, 1000);
+        toggleBtnRef.current.click();
         return () => {
-            clearTimeout(timer);
+            // clearTimeout(timer);
             console.log("CockpitJS clean up work in useEffect");
         }
     }, [])
