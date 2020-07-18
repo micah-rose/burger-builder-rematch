@@ -20,7 +20,8 @@ state = {
   otherState: "some other value",
   showPersons: false,
   showCockpit: true,
-  changeCounter: 0
+  changeCounter: 0,
+  authenticated: false
 }
 
 static getDerivedStateFromProps(props, state){
@@ -83,6 +84,10 @@ togglePersonsHandler = () => {
 this.setState({showPersons: true})
 }
 
+loginHandler = () => {
+  this.setState({authenticated: true});
+}
+
 deletePersonHandler = (personIndex) => {
   //const persons = this.state.persons.slice();
   const persons = [...this.state.persons]; //using spread operator vs slice
@@ -100,7 +105,9 @@ deletePersonHandler = (personIndex) => {
         <Persons 
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
-        changed={this.nameChangedHandler}/>   
+        changed={this.nameChangedHandler}
+        isAuthenticated={this.state.authenticated}
+        />   
   }
 
   return (
@@ -112,7 +119,8 @@ deletePersonHandler = (personIndex) => {
         <Cockpit 
         showPersons={this.state.showPersons}
         clicked = {this.togglePersonsHandler}
-        persons={this.state.persons}/>
+        persons={this.state.persons}
+        login={this.loginHandler}/>
       ) : null}
         {personCards}
     </Aux>
