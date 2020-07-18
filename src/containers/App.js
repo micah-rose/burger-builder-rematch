@@ -16,7 +16,8 @@ state = {
     { id: "c3", name: "Steph", age: 26}
   ],
   otherState: "some other value",
-  showPersons: false
+  showPersons: false,
+  showCockpit: true
 }
 
 static getDerivedStateFromProps(props, state){
@@ -98,10 +99,15 @@ deletePersonHandler = (personIndex) => {
 
   return (
     <div className={classes.App}>  
+    <button 
+    onClick={() => {this.setState({showCockpit: false})}}>
+      Remove Cockpit</button>
+      {this.state.showCockpit ? (
         <Cockpit 
         showPersons={this.state.showPersons}
         clicked = {this.togglePersonsHandler}
         persons={this.state.persons}/>
+      ) : null}
         {personCards}
     </div>
   );

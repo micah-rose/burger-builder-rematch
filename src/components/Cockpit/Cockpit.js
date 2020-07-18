@@ -5,10 +5,20 @@ const Cockpit = (props) => {
     useEffect(() => {
         console.log("CockpitJS use effect");
         setTimeout(() => {
-            alert("Saved data to cloud!");
-        }, 1000)
+            console.log("SAVED DATA TO CLOUD");
+        }, 1000);
+        return () => {
+            console.log("CockpitJS clean up work in useEffect");
+        }
     }, [])
 
+    useEffect(() => {
+    console.log("CockpitJS 2nd use effect");
+    return () => {
+        console.log("CockpitJS clean up work in 2nd useEffect");
+    }
+ })
+ 
     const assignedClasses = [];
     let btnClass = '';
     if (props.showPersons){
