@@ -7,7 +7,7 @@ const Cockpit = (props) => {
         setTimeout(() => {
             alert("Saved data to cloud!");
         }, 1000)
-    }, [props.persons])
+    }, [])
 
     const assignedClasses = [];
     let btnClass = '';
