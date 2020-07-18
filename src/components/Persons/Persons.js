@@ -9,7 +9,9 @@ class Persons extends Component {
 
     shouldComponentUpdate(nextProps, nextState){
         console.log("PersonsJS should component update");
-        if (nextProps.persons !== this.props.persons){
+        if (nextProps.persons !== this.props.persons || 
+            nextProps.changed !== this.props.changed || 
+            nextProps.clicked !== this.props.clicked){
             return true;
         } else {
             return false;
