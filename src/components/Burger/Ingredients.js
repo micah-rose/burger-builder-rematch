@@ -28,7 +28,11 @@ const Ingredients = ( props ) => {
         case ('lettuce'):
             ingredient = <div className={classes.Lettuce}></div>;
             break;
+        default:
+            ingredient = null;
     }
+
+    return ingredient;
 };
 
 export default Ingredients;
