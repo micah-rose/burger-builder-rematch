@@ -39,7 +39,7 @@ class Ingredients extends Component  {
     }
 };
 
-Ingredients.PropTypes = {
+Ingredients.propTypes = {
     type: PropTypes.string.isRequired
 }
 
