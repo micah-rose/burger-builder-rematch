@@ -1,7 +1,12 @@
 import React from 'react';
+import classes from '../NavItems/NavItem.css'
 
 const NavItem = (props) => (
-    <li><a href="/">Link</a></li>
+    <li className={classes.NavItem}>
+        <a 
+        href={props.link} 
+        className={props.active ? classes.active : null}>{props.children}</a>
+    </li>
 );
 
 export default NavItem;
