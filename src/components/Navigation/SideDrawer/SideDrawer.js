@@ -4,7 +4,6 @@ import NavItems from '../NavItems/NavItems';
 import classes from '../SideDrawer/SideDrawer.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import Aux from '../../../hoc/Auxi';
-import { lte } from 'semver';
 
 const SideDrawer = (props) => {
    
