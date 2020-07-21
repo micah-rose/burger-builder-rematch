@@ -2,18 +2,23 @@ import React from 'react';
 import Logo from '../../Logo/Logo';
 import NavItems from '../NavItems/NavItems';
 import classes from '../SideDrawer/SideDrawer.css';
+import Backdrop from '../../UI/Backdrop/Backdrop';
+import Aux from '../../../hoc/Auxi';
 
 const SideDrawer = (props) => {
     //...
     return (
-        <div className={classes.SideDrawer}>
-            <div className={classes.Logo}>
-                <Logo />
+        <Aux>
+            <Backdrop show/>
+            <div className={classes.SideDrawer}>
+                <div className={classes.Logo}>
+                    <Logo />
+                </div>
+                <nav>
+                    <NavItems />
+                </nav>
             </div>
-            <nav>
-                <NavItems />
-            </nav>
-        </div>
+        </Aux>
     );
 };
 
