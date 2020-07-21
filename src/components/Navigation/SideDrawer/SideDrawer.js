@@ -4,13 +4,21 @@ import NavItems from '../NavItems/NavItems';
 import classes from '../SideDrawer/SideDrawer.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import Aux from '../../../hoc/Auxi';
+import { lte } from 'semver';
 
 const SideDrawer = (props) => {
-    //...
+   
+    let attachedClasses = [classes.SideDrawer, classes.Close];
+    if(props.open){
+        attachedClasses = [classes.SideDrawer, classes.Open]
+    }
+
     return (
         <Aux>
-            <Backdrop show/>
-            <div className={classes.SideDrawer}>
+            <Backdrop 
+            show={props.open}
+            clicked={props.closed}/>
+            <div className={attachedClasses.join(' ')}>
                 <div className={classes.Logo}>
                     <Logo />
                 </div>
