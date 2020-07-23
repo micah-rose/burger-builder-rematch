@@ -6,19 +6,6 @@ import {Route, Switch} from 'react-router-dom';
 import Orders from '../containers/Orders/Orders';
 class App extends Component {
 
-  // state = {
-  //   show: true
-  // }
-
-  // componentDidMount() {
-  //     setTimeout(() => {
-  //       this.setState({show: false})
-  //     }, 5000)
-  // }
-
-  //Used with checking for WillUnMount 
-  //{this.state.show ? <BurgerBuilder/>  : null } 
-
   render(){
     return (
       <div>
