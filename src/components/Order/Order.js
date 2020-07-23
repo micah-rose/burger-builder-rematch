@@ -1,7 +1,15 @@
 import React from 'react';
 import classes from '../Order/Order.css'
 
-const order = (props) => {
+
+// const Order = () => (
+//     <div className={classes.Order}>
+//         <p>Ingredients</p>
+//         <p>Price</p>
+//     </div>
+// );
+
+const Order = (props) => {
     const ingredients = [];
 
     for (let ingredientName in props.ingredients){
@@ -31,4 +39,4 @@ const order = (props) => {
     )
 }
 
-export default order;
+export default Order;
