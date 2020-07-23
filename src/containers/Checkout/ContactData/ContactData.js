@@ -88,9 +88,9 @@ render(){
     let form = (            
         <form>
             <Input elementType="..." elementConfig="..." value="..." />
-            <Input inputtype="input" type="email" name="email" placeholder="Your Email" />
-            <Input inputtype="input" type="text" name="street" placeholder="Your Street" />
-            <Input inputtype="input" type="text" name="zipCode" placeholder="Your Zip Code" />
+            <Input elementType="..." elementConfig="..." value="..."/>
+            <Input elementType="..." elementConfig="..." value="..." />
+            <Input elementType="..." elementConfig="..." value="..." />
             <Button 
             onClick={this.orderHandler}
             btnType="Success" >ORDER</Button>
