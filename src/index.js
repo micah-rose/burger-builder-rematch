@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import reducer from '../src/store/reducer';
+import reducer from '../src/store/reducers/reducer';
 
 const store = createStore(reducer);
 
@@ -18,6 +18,7 @@ const app = (
   </Provider>
 )
 
+//window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION_() || compose
 
 ReactDOM.render(
   <React.StrictMode>
