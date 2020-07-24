@@ -18,20 +18,18 @@ render() {
     let summary = <Redirect to="/" />
     if (this.props.ing){
         summary = (
+            <div>
             <CheckoutSummary 
             ingredients={this.props.ings}
             checkoutCancelled={this.checkoutCancelledHandler}
             checkoutContinued={this.checkoutContinuedHandler} />
-        )
-    }
-    return (
-        <div>
-            {summary}
             <Route 
             path={this.props.match.path + '/contact-data'}
             component={ContactData} /> 
-        </div>
-    )
+            </div>
+        )
+    }
+    return {summary}
 }
 }
 
