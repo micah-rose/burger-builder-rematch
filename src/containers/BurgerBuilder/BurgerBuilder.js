@@ -14,8 +14,6 @@ import * as burgerBuilderActions from '../../store/actions/index';
 class BurgerBuilder extends Component {
     state= {
         purchasing: false,
-        loading: false,
-        error: false
     }
 
     updatePurchaseState (ingredients) {
@@ -51,7 +49,7 @@ class BurgerBuilder extends Component {
         }
 
         let orderSummary = null;
-        let burger = this.state.error ? <p>Ingredients can't be loaded!</p>:<Spinner />
+        let burger = this.props.error ? <p>Ingredients can't be loaded!</p>:<Spinner />
         
         if(this.props.ings){
         burger = (
@@ -71,9 +69,6 @@ class BurgerBuilder extends Component {
          purchaseCancelled={this.purchaseCancelHandler}
          purchaseContinued={this.purchaseContinueHandler}
          price={this.props.price}/>
-        }
-        if(this.state.loading){
-            orderSummary = <Spinner />
         }
 
         return (
