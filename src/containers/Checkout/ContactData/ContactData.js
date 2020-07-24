@@ -99,7 +99,7 @@ class ContactData extends Component {
 
         updatedFormEl.value = event.target.value;
         updatedOrderForm[inputIdentifier] = updatedFormEl;
-        this.setState({orderFor: updatedOrderForm});
+        this.setState({orderForm: updatedOrderForm});
     }
 
 render(){
