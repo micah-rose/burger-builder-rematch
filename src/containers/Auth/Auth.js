@@ -11,7 +11,7 @@ class Auth extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'email',
-                    placeholder: 'Enter your e-mail'
+                    placeholder: 'Username'
                 },
                 value: '',
                 validation: {
@@ -36,6 +36,47 @@ class Auth extends Component {
                 touched: false
             }
         }
+    }
+
+    checkValidity(value, rules){
+        let isValid = true;
+
+        if(rules.required){
+            isValid = value.trim() !== '' && isValid;
+        }
+
+        if(rules.minLength){
+            isValid = value.length >= rules.minLength && isValid;
+        }
+
+        if(rules.maxLength){
+            isValid = value.length <= rules.maxLength && isValid;
+        }
+
+        if (rules.isEmail){
+            const pattern = "^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
+            isValid = pattern.test(value) && isValid
+        }
+
+        if (rules.isNumeric) {
+            const pattern = /^\d+$/;
+            isValid = pattern.test(value) && isValid;
+        }
+
+        return isValid;
+    }
+
+    inputChangedHandler = (event, controlName) => {
+        const updatedControls = {
+            ...this.state.controls,
+            [controlName]: {
+                ...this.state.controls[controlName],
+                value: event.target.value,
+                valid: this.checkValidity(event.target.value, this.state.controls[controlName].validation),
+                touched: true
+            }
+        }
+        this.setState({controls: updatedControls})
     }
 
     render() {
