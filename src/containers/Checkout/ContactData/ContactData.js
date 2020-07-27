@@ -6,7 +6,8 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import {connect} from 'react-redux';
 import withError from '../../../hoc/withError/withError';
-import * as actions from '../../../store/actions/index'
+import * as actions from '../../../store/actions/index';
+import {updteObject, updateObject} from '../../../shared/utility';
 
 class ContactData extends Component {
     state = {
@@ -132,24 +133,19 @@ class ContactData extends Component {
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        const updatedOrderForm = {
-            ...this.state.orderForm
-        }
-
-        const updatedFormEl = {
-            ...updatedOrderForm[inputIdentifier]
-        }
-
-        updatedFormEl.value = event.target.value;
-        updatedFormEl.valid = this.checkValidity(updatedFormEl.value, updatedFormEl.validation);
-        updatedFormEl.touched = true;
-        updatedOrderForm[inputIdentifier] = updatedFormEl;
+        const updatedFormElement = updateObject(this.state.orderForm[inputIdentifier], {
+            value: event.target.value,
+            valid: this.checkValidity(event.target.value, this.state.orderForm[inputIdentifier].validation),
+            touched: true
+        });
+        const updatedOrderForm = updateObject(this.state.orderForm, {
+            [inputIdentifier]: updatedFormElement
+        });
         
         let formIsValid = true;
-        for (let i in updatedOrderForm){
-            formIsValid = updatedOrderForm[i].valid && formIsValid;
+        for (let inputIdentifier in updatedOrderForm) {
+            formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
         }
-
         this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
     }
 
