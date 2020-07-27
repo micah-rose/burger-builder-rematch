@@ -9,13 +9,19 @@ configure({
 });
 
 describe('<NavItems />', () => {
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<NavItems />);
+    })
+
     it('should render two nav elements if not authenticated', () => {
-        const wrapper = shallow(<NavItems />);
+        wrapper = shallow(<NavItems />);
         expect(wrapper.find(NavItem)).toHaveLength(2);
     });
 
     it('should render two nav elements if authenticated', () => {
-        const wrapper = shallow(<NavItems isAuthenticated/>);
-        expect(wrapper.find(NavItem)).toHaveLength(2);
+        wrapper.setProps({isAuthenticated: true});
+        expect(wrapper.find(NavItem)).toHaveLength(3);
     });
 } );
