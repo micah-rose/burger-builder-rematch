@@ -1,6 +1,4 @@
 import * as actionTypes from '../actions/actionTypes';
-import axios from '../../axios-orders';
-import { useImperativeHandle } from 'react';
 
 export const purchaseBurgerSuccess = (id, orderData) => {
     return {
@@ -58,22 +56,8 @@ export const fetchOrdersStart = () => {
 }
 
 export const fetchOrders = (token) => {
-    return dispatch => {
-        dispatch(fetchOrdersStart());
-        const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + useImperativeHandle + '"';
-        axios.get('/orders.json' + queryParams)
-        .then(res => {
-            const fetchedOrders = [];
-            for(let key in res.data) {
-                fetchedOrders.push({
-                    ...res.data[key],
-                    id: key
-                })
-            }
-            dispatch(fetchOrdersSuccess(fetchedOrders));
-        })
-        .catch(err => {
-            dispatch(fetchOrdersFailed(err))
-        })
+    return  {
+        type: actionTypes.FETCH_ORDERS_SAGA,
+        token: token 
     }
 }
